@@ -82,6 +82,7 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0' # provides RSpec one-liners to test common Rails functionality
   gem 'faker'
   gem 'simplecov', require: false
+  gem 'warden'
   gem 'warden-rspec-rails'
   gem 'webdrivers'
   gem 'rails-controller-testing'
