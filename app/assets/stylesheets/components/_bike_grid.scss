@@ -1,0 +1,14 @@
+.container--grid{
+  display: grid;
+  border: 1px solid red;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 4rem;
+}
+
+.bike-card{
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+}
