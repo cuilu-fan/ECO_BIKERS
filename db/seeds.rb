@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 Category.destroy_all
 Category.create(name: "City")
 Category.create(name: "Mountain")
@@ -29,6 +31,12 @@ conditions = %i[good very-good]
     refurbed_year: refurbed_years.sample,
     condition: conditions.sample,
     price: rand(200..500),
-    category: Category.all.sample
+    category: Category.all.sample,
+    2.times do
+      file = URI.open("https://unsplash.com/s/photos/bicycle?orientation=landscape&license=free")
+      article = Article.new(title: "bike", body: "Reloved bikes")
+      article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+      article.save
+    end
   )
 end
