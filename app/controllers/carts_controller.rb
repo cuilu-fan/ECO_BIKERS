@@ -1,11 +1,12 @@
 class CartsController < ApplicationController
   def show
+    puts "Inside show action" # Add this line to check if the action is executed
     if current_user&.cart
       @cart = current_user.cart
       @cart_items = @cart.cart_items
     else
       # Redirect the user to the sign-in page
-      redirect_to new_user_session_path
+      # redirect_to new_user_session_path
       # Or create a new cart for the user
       # cart = Cart.create(user: current_user)
       # @cart = cart
