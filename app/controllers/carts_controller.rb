@@ -1,18 +1,10 @@
 class CartsController < ApplicationController
   def show
-    puts "Inside show action" # Add this line to check if the action is executed
-    if current_user&.cart
-      @cart = current_user.cart
-      @cart_items = @cart.cart_items
-    else
-      # Redirect the user to the sign-in page
-      # redirect_to new_user_session_path
-      # Or create a new cart for the user
-      # cart = Cart.create(user: current_user)
-      # @cart = cart
-      # @cart_items = []
-      # or anything else we want
-    end
+    puts "Inside show action"
+    return unless current_user&.cart
+
+    @cart = current_user.cart
+    @cart_items = @cart.cart_items
   end
 
   def update
@@ -28,12 +20,12 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    puts "Inside destroy action"
     @cart = current_user.cart
 
     # Perform any necessary cleanup or additional operations
     @cart.destroy
 
-    # Redirect to the appropriate page
     redirect_to root_path
   end
 end
