@@ -3,7 +3,7 @@
   <div class="bike-card mt-4 mb-4">
     <%= link_to bike.brand, bike_path(bike) %>
     <% bike.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
   <% end %>
