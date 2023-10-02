@@ -1,0 +1,79 @@
+.login-wraper {
+  height: 100vh;
+  width: 100vw;
+  background-image: asset-url("home_background_img.jpg");
+  background-size: 100% 100%;
+}
+
+.imglogin {
+  position: absolute;
+  top: 10px;
+  left: 707px;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50px;
+}
+
+
+.sign-up-button {
+  position: absolute;
+  top: 562px;
+  left: 904px;
+  width: 110px;
+  height: 40px;
+  background-color: rgb(231, 165, 0) ;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  background: rgb(231, 165, 0);
+}
+
+
+.simple-form {
+  width: 438px;
+  height: 293px;
+  border-radius: 10px;
+}
+
+
+.btn-primary {
+  position: absolute;
+  top: 562px;
+  left: 565px;
+  width: 110px;
+  height: 40px;
+  background-color: rgb(231, 165, 0) ;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  background: rgb(231, 165, 0);
+}
+
+
+
+.btn-primary:hover {
+  background: white;
+  border: 2px solid rgb(231, 165, 0) !important;
+  color: rgb(231, 165, 0) !important;
+}
+
+.sign-up-button:hover {
+  background: white;
+  border: 2px solid rgb(231, 165, 0) !important;
+  color: rgb(231, 165, 0) !important;
+}
+
+.modal-content {
+  background: rgb(231, 165, 0);
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.modal-header {
+  background: rgb(231, 165, 0);
+  border-radius: 8px 8px 0px 0px;
+}
+.modal-body {
+  background: rgb(231, 165, 0);
+  border-radius: 0px 0px 8px 8px;
+}
