@@ -90,3 +90,5 @@ group :test do
   gem 'webdrivers'
   gem 'rails-controller-testing'
 end
+
+gem "cloudinary"
