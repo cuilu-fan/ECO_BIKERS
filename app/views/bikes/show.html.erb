@@ -1,0 +1,42 @@
+<div class ="bike-container">
+  <div class="carousel-container">
+    <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators carousel-color-btm">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= image_tag "img1.jpg", class: "bike-image", alt: "Bike" %>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag "img1.jpg", class: "bike-image", alt: "Bike" %>
+    </div>
+  </div>
+  <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon carousel-color" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon carousel-color" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  </div>
+  <div class="bike-details">
+    <h1><%= @bike.brand %></h1>
+    <p>Description: A cool description for this amazing bike. A cool description for this amazing bike. A cool description for this amazing bike. A cool description for this amazing bike. A cool description for this amazing bike.</p>
+    <ul>
+      <li>Brand: <%= @bike.brand %></li>
+      <li>Age: <%= @bike.age %></li>
+      <li>Color: <%= @bike.color %></li>
+      <li>Size: <%= @bike.size %></li>
+      <li>Refurbed year: <%= @bike.refurbed_year %></li>
+      <li>Condition: <%= @bike.condition %></li>
+    </ul>
+    <div class="cont-btn-price">
+      <h2 class= "Bike-price"><%= @bike.price %> €</h2>
+      <button type="submit" class= "Bike-button">Add to cart</button>
+    </div>
+  </div>
+</div>
