@@ -1,13 +1,10 @@
 <div class="container--grid">
-  <div class="bike-card mt-4 mb-4">Bike 1
+  <% @bikes.each do |bike| %>
+  <div class="bike-card mt-4 mb-4">
+    <%= link_to bike.brand, bike_path(bike) %>
+    <% bike.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
-
-  <div class="bike-card mt-4 mb-4">Bike 1
-  </div>
-
-  <div class="bike-card mt-4 mb-4">Bike 1
-  </div>
-
-  <div class="bike-card mt-4 mb-4">Bike 1
-  </div>
+  <% end %>
 </div>

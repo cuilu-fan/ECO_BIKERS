@@ -60,7 +60,7 @@ pictures = ["bianchi_gravel.jpg",
   "yellow_trekking.jpg"]
 
 10.times do
-  article = Bike.create!(
+  bike = Bike.create!(
     brand: brands.sample,
     age: 3,
     color: colors.sample,
@@ -68,8 +68,10 @@ pictures = ["bianchi_gravel.jpg",
     refurbed_year: refurbed_years.sample,
     condition: conditions.sample,
     price: rand(200..500),
-    category: Category.all.sample)
-    article.photos.attach(io: File.open(File.join(Rails.root,
-                          "app/assets/seeds/#{pictures.sample}")),
-                          filename: 'bike_picture')
+    category: Category.all.sample
+  )
+  bike.photos.attach(io: File.open(File.join(Rails.root, "app/assets/seeds/#{pictures.sample}")),
+                     filename: 'bike_picture')
+  bike.photos.attach(io: File.open(File.join(Rails.root, "app/assets/seeds/#{pictures.sample}")),
+                     filename: 'bike_picture')
 end

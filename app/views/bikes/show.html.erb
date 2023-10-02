@@ -1,5 +1,3 @@
-<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
-
 <div class ="bike-container">
   <div class="carousel-container">
     <div id="carouselExampleIndicators" class="carousel slide">
@@ -9,10 +7,14 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <%= image_tag "img1.jpg", class: "bike-image", alt: "Bike" %>
+    <% @bike.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
+    <% end %>
     </div>
     <div class="carousel-item">
-    <%= image_tag "img1.jpg", class: "bike-image", alt: "Bike" %>
+    <% @bike.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
+    <% end %>
     </div>
   </div>
   <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
