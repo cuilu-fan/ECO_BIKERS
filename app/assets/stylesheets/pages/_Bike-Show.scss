@@ -1,0 +1,78 @@
+body {
+    background-color: #8ba691;
+}
+
+.bike-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem 10rem 12rem 10rem;
+  align-items: center;
+  justify-items: center;
+  background-color: #8ba691;
+  h1 {
+      font-weight: bold;
+      font-size: 30px;
+  }
+
+  ul {
+      margin-top: 50px;
+      font-weight: bold;
+      font-size: 20px;
+  }
+
+  p {
+      font-size: 20px;
+  }
+}
+
+.carousel-container {
+  width: 35%;
+  margin-right: 10rem;
+  margin-left: 15rem;
+  box-shadow: 12px 12px 2px 1px rgba(51, 51, 52, 0.2);
+  border-radius: 25px;
+}
+.carousel-color {
+  background-color: #f7a924;
+  border-radius: 50%;
+}
+
+.carousel-color-btm {
+  background-color: #f7a924;
+}
+
+.bike-image {
+  width: 100%;
+  margin-right: 0;
+  border-radius: 25px;
+}
+
+.bike-details {
+  width: 30%;
+  height: auto;
+  border-radius: 20px;
+  padding: 37.42px;
+  background-color: #d9d9d9;
+  box-shadow: 12px 12px 2px 1px rgba(51, 51, 52, 0.2);
+  }
+
+.cont-btn-price {
+  margin-top: 50px;
+  float: right;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  .Bike-price {
+      font-weight: bold;
+  }
+}
+
+.Bike-button {
+  background-color: #f7a924;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 25px;
+  padding: 15px 20px 15px 20px;
+  border: none;
+}

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_01_114639) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_10_02_131036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,12 +59,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_01_114639) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "bike_id", null: false
-    t.bigint "order_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bike_id"], name: "index_carts_on_bike_id"
-    t.index ["order_id"], name: "index_carts_on_order_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -79,7 +78,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_01_114639) do
     t.bigint "bike_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "cart_id", null: false
     t.index ["bike_id"], name: "index_orders_on_bike_id"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -121,9 +122,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_01_114639) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bikes", "categories"
   add_foreign_key "carts", "bikes"
-  add_foreign_key "carts", "orders"
   add_foreign_key "carts", "users"
   add_foreign_key "orders", "bikes"
+  add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "shopping_carts", "users"

@@ -1,20 +1,67 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="login-wraper">
+  <div class="login-button">
+    <button type="button" class="btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+      Login
+    </button>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+  <%= image_tag "ecobikers_logo.png", class: "imglogin" %>
 
-<%= render "devise/shared/links" %>
+  <div class="login-text">
+    <p>We love bikes, and we believe<br> every bike can create a new<br> story with its new owner.
+      <br>
+      <br>Therefore, we  refurb them and<br> await their new owners.
+      <br>
+      <br>
+      <br>
+      <br>
+      Are you looking for a bike?
+      <br>🚴Join us here!🚴
+      </p>
+  </div>
+
+  <div class="p-text">
+  <p>Earth is our only home, unless until further notice
+  <br>Let's try our best to keep it cool.</p>
+  </div>
+
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "btn sign-up-button" %>
+
+  <!-- Modal -->
+
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Welcome again</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+      <div class="simple-form">
+    <div class="container">
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in", class: "form-login" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
