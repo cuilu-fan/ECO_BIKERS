@@ -6,16 +6,11 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    <% @bike.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
+    <% @bike.photos.each_with_index do |photo, index| %>
+      <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
+      </div>
     <% end %>
-    </div>
-    <div class="carousel-item">
-    <% @bike.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
-    <% end %>
-    </div>
   </div>
   <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon carousel-color" aria-hidden="true"></span>
