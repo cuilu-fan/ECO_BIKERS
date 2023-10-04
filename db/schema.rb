@@ -92,6 +92,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_131036) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "shopping_carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shopping_carts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -104,8 +111,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_131036) do
     t.string "last_name"
     t.string "address"
     t.string "phone_number"
+    t.bigint "shopping_cart_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["shopping_cart_id"], name: "index_users_on_shopping_cart_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -117,4 +126,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_131036) do
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "users"
+  add_foreign_key "shopping_carts", "users"
+  add_foreign_key "users", "shopping_carts"
 end
