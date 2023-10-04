@@ -6,6 +6,6 @@ class CartsController < ApplicationController
 
   def create
     @cart = Cart.new(bike_id: params[:id], user: current_user)
-    raise
+    @cart.save
   end
 end
