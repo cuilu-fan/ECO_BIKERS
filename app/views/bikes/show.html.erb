@@ -9,10 +9,8 @@
     <% @bike.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
         <%= cl_image_tag photo.key, class: "bike-image", alt: "Bike" %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "bike-image", alt: "Bike" %>
-
       </div>
-    <% end %>
+      <% end %>
   </div>
   <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon carousel-color" aria-hidden="true"></span>
@@ -38,8 +36,13 @@
     <div class="cont-btn-price">
       <h2 class= "Bike-price"><%= @bike.price %> €</h2>
       <button type="submit" class= "Bike-button btn1">Add to cart</button>
-    <%= link_to carts_path(id:@bike.id), data: {turbo_method: "post"} do %>
-      <button type="submit" class= "Bike-button">Add to cart</button>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
