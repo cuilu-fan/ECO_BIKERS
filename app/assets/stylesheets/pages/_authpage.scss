@@ -1,49 +1,74 @@
-.login-wraper {
+
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
-  background-image:  linear-gradient(
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.4)
-  ), asset-url("home_background_img.jpg");
-  background-size: 100% 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)), asset-url("home_background_img.jpg");
+  background-size: cover;
+}
+
+.Section-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 20px;
+  animation: fade-in 2s ease-in-out;
 }
 
 .imglogin {
-  position: absolute;
-  top: 10px;
-  left: 713px;
   width: 100px !important;
   height: 100px !important;
   border-radius: 50px;
 }
 
-.fix{
+.fix {
   justify-content: center;
 }
 
-.grid--signup{
+.grid--signup {
   display: grid;
   overflow-y: scroll !important;
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: row;
+}
 
-.sign-up-button {
-  position: absolute;
-  top: 497px;
-  left: 858px;
+.sign-up-button,
+.btn-primary {
   width: 110px;
   height: 40px;
-  background-color: rgb(231, 165, 0) ;
+  background-color: rgb(231, 165, 0);
   border: none;
   color: white;
   border-radius: 10px;
-  background: rgb(231, 165, 0);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
 }
 
-.sign-up-button:hover {
+.sign-up-button:hover,
+.btn-primary:hover {
   background: white;
   border: 2px solid rgb(231, 165, 0) !important;
   color: rgb(231, 165, 0) !important;
+}
+
+.btn-primary {
+  margin-left: 2rem;
+}
+
+.sign-up-button {
+  margin-left: 6rem;
 }
 
 .simple-form {
@@ -51,28 +76,6 @@
   height: 293px;
   border-radius: 10px;
 }
-
-
-.btn-primary {
-  position: absolute;
-  top: 497px;
-  left: 565px;
-  width: 110px;
-  height: 40px;
-  background-color: rgb(231, 165, 0) ;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  background: rgb(231, 165, 0);
-}
-
-
-.btn-primary:hover {
-  background: white;
-  border: 2px solid rgb(231, 165, 0) !important;
-  color: rgb(231, 165, 0) !important;
-}
-
 
 .modal-content {
   background: rgb(231, 165, 0);
@@ -86,6 +89,7 @@
   background: rgb(231, 165, 0);
   border-radius: 8px 8px 0px 0px;
 }
+
 .modal-body {
   background: rgb(231, 165, 0);
   border-radius: 0px 0px 8px 8px;
@@ -95,7 +99,10 @@
   background-color: #283044;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, border-radius 0.3s, color 0.3s;
 }
+
 .form-login:hover {
   background-color: white;
   border-radius: 8px;
@@ -106,18 +113,23 @@
   color: white;
   font-size: 20px;
   font-weight: bold;
-  clear: both;
   text-align: center;
-  position: relative;
-  top: 120px;
+  margin-top: 20px;
 }
 
 .p-text {
   color: white;
   font-size: 15px;
   font-weight: bold;
-  clear: both;
   text-align: center;
-  position: relative;
-  top: 240px;
+  margin-top: 20px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
