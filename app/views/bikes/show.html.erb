@@ -35,14 +35,9 @@
     </ul>
     <div class="cont-btn-price">
       <h2 class= "Bike-price"><%= @bike.price %> €</h2>
+      <%= link_to carts_path(id:@bike.id), data: {turbo_method: "post"} do %>
       <button type="submit" class= "Bike-button btn1">Add to cart</button>
+    <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
