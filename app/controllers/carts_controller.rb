@@ -9,9 +9,9 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
-    def destroy
-      @cart = Cart.find(params[:id])
-      @cart.destroy!
-      redirect_to carts_path
-    end
+  def destroy
+    @cart = Cart.find(params[:id])
+    @cart.destroy!
+    redirect_to carts_path
+  end
 end
