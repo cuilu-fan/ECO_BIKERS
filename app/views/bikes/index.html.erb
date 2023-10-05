@@ -15,7 +15,6 @@
 
         <%= link_to bike_path(bike) do %>
           <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-          <%# <img src="..." class="d-block w-100" alt="..."> %>
           <div class="carousel-caption d-none d-md-block bike-background-picture">
             <h5 class="bike-pic-text"><%= bike.brand %></h5>
             <p class="bike-pic-text">Size: <%= bike.size%></p>

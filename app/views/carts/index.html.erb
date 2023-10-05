@@ -1,27 +1,29 @@
+<div class="container bike-cart-item">
+    <% @carts.each do |cart| %>
+  <div class="bike-cart-pic">
+    <!-- this is bike pictur -->
+      <% cart.bike.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+          <%= cl_image_tag photo.key, height: 100, width: 200, crop: :fill %>
+        </div>
+      <% end %>
+  </div>
 
-<% @carts.each do |cart| %>
-<!-- this is bike pictur -->
-  <% cart.bike.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+  <div class="bike-detail-list">
 
-<ul>
+    <ul>
+      <li><%= cart.bike.brand %></li>
+      <li><%= cart.bike.price %></li>
+      <li><%= cart.bike.color %></li>
+      <li><%= cart.bike.size %></li>
+      <li><%= cart.bike.age %></li>
+      <li><%= cart.bike.refurbed_year %></li>
+      <li><%= cart.bike.condition %></li>
+    </ul>
+  </div>
 
-
-  <li><%= cart.bike.brand %></li>
-
-  <li><%= cart.bike.price %></li>
-
-  <li><%= cart.bike.color %></li>
-
-  <li><%= cart.bike.size %></li>
-
-  <li><%= cart.bike.age %></li>
-
-  <li><%= cart.bike.refurbed_year %></li>
-
-  <li><%= cart.bike.condition %></li>
-
-  <%= link_to "delete", cart_path(cart), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  </ul>
+  <div class="delete">
+    <%= link_to "delete", cart_path(cart), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
 <% end %>
+</div>
