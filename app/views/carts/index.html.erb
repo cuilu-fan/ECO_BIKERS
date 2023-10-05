@@ -1,5 +1,27 @@
+
 <% @carts.each do |cart| %>
-  <%= cart.bike.brand %>
-  <%= cart.bike.price %>
-  <p>you have to put the pics here front ends peuple</p>
+<!-- this is bike pictur -->
+  <% cart.bike.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
+<ul>
+
+
+  <li><%= cart.bike.brand %></li>
+
+  <li><%= cart.bike.price %></li>
+
+  <li><%= cart.bike.color %></li>
+
+  <li><%= cart.bike.size %></li>
+
+  <li><%= cart.bike.age %></li>
+
+  <li><%= cart.bike.refurbed_year %></li>
+
+  <li><%= cart.bike.condition %></li>
+
+  <%= link_to "delete", cart_path(cart), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </ul>
 <% end %>
