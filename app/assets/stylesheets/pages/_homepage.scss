@@ -4,14 +4,14 @@
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.2)
-  ), url("home_background_img.jpg");
-  background-size: 100% 100%;
+  ), url("BackBike.jpg");
+  background-size: cover;
 
   .category-text {
     position: relative;
     top: 210px;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
     font-weight: bold;
     color: white;
   }
@@ -50,4 +50,8 @@
   border: 2px solid rgb(231, 165, 0);
   color: rgb(231, 165, 0);
   transition: 0.5s;
+}
+
+.Spantext {
+  color: rgb(231, 165, 0);
 }
