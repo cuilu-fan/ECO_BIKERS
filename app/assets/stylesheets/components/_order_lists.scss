@@ -1,0 +1,27 @@
+.bike-order-item{
+  border-radius: 10px;
+  background-color: aliceblue;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  height: 200px;
+  width: 600px;
+}
+
+.bk-o-ls{
+  padding: 4px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-detail-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 0.5rem;
+  padding-left: 30px;
+}
