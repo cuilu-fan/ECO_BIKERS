@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
   def index
-    @bikes = Bike.all.where(params[:category_id])
+    @bikes = Bike.all.where(purchased: false)
   end
 
   def show
