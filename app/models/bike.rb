@@ -3,5 +3,4 @@ class Bike < ApplicationRecord
   has_many :orders
   has_many :carts, dependent: :destroy
   has_many_attached :photos
-
 end
