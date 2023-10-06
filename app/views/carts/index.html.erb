@@ -33,7 +33,7 @@
       </div>
 
       <div class="container buttons">
-        <%=link_to carts_path data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %>
+        <%=link_to cart_path(cart) data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do  %>
           <div class="delete">
             <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512">
               <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
