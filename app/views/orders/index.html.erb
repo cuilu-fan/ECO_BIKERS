@@ -1,0 +1,12 @@
+<% @orders.each do |order| %>
+<%= order.cart.bike.brand%>
+<%= order.cart.bike.price%>
+<%= order.cart.bike.color%>
+<%= order.cart.bike.size%>
+<%= order.cart.bike.age%>
+<%= order.cart.bike.refurbed_year%>
+<%= order.cart.bike.condition%>
+<%= order.cart.bike.photos.each do |photo| %>
+<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<% end %>

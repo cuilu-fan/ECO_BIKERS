@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root "categories#index"
 
   resources :bikes do
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:create]
   end
-  resources :orders, only: [:show]
   resources :carts, only: [:index, :create, :destroy]
+  resources :orders, only: [:index]
 end
