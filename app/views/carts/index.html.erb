@@ -22,6 +22,15 @@
 
   <li><%= cart.bike.condition %></li>
 
+  <!-- this is delete button -->
+
   <%= link_to "delete", cart_path(cart), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </ul>
+
+  <!-- this is order button -->
+
+  <%= link_to bike_orders_path(bike_id:cart.bike.id, cart_id:cart.id), data: {turbo_method: "post"} do %>
+      <button type="submit" >order</button>
+    <% end %>
+
 <% end %>
