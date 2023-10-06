@@ -34,7 +34,7 @@
       <li>Condition: <%= @bike.condition %></li>
     </ul>
     <div class="cont-btn-price">
-      <h2 class= "Bike-price"><%= @bike.price %> €</h2>
+      <h2 class= "Bike-price"><%= number_to_currency(@bike.price, precision: 2, unit: "€", separator: ".", delimiter: " ") %></h2>
       <%= link_to carts_path(id:@bike.id), data: {turbo_method: "post"} do %>
       <button type="submit" class= "Bike-button btn1">Add to cart</button>
     <% end %>

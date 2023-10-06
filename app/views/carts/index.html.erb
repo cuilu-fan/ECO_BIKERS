@@ -28,7 +28,7 @@
 
         <div class="container bk-d-ls">
           <h5 class="bike-detail-list">Brand: <%= cart.bike.brand %></h5>
-          <h5 class="bike-detail-list">Price: <%= cart.bike.price %></h5>
+          <h5 class="bike-detail-list">Price: <%= number_to_currency(cart.bike.price, precision: 2, unit: "€", separator: ".", delimiter: " ")  %></h5>
           <h5 class="bike-detail-list">Size: <%= cart.bike.size %></h5>
         </div>
 

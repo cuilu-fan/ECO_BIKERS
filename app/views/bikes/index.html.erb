@@ -19,7 +19,7 @@
             <h5 class="bike-pic-text"><%= bike.brand %></h5>
             <p class="bike-pic-text">Size: <%= bike.size%></p>
             <p class="bike-pic-text">Refurbed Year: <%= bike.refurbed_year %></p>
-            <p class="bike-pic-text">Price: <%= bike.price %></p>
+            <p class="bike-pic-text">Price: <%= number_to_currency(bike.price, precision: 2, unit: "€", separator: ".", delimiter: " ") %></p>
           </div>
           <% end %>
         </div>
