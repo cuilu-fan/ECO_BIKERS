@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   resources :bikes do
     resources :orders, only: %i[new create]
   end
-  resources :orders, only: [:show]
-  get '/cart', to: 'carts#show', as: 'cart'
+
+  resources :orders, only: %i[show index new create]
+
+  post '/cart/add_item/:item_id', to: 'carts#add_to_cart', as: 'add_to_cart'
+
   resource :cart, only: %i[show update destroy]
 end
