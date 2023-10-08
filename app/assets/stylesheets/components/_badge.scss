@@ -1,0 +1,14 @@
+.p1.has-badge:after {
+  position: absolute;
+  right: 50%;
+  top: 25%;
+  content: attr(data-count);
+  font-size: 40%;
+  padding: .4em;
+  border-radius: 50%;
+  line-height: 1em;
+  color: white;
+  background: rgba(255, 0, 0, .85);
+  text-align: center;
+  min-width: 1em;
+}
