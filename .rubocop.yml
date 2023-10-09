@@ -17,6 +17,8 @@ AllCops:
     - "app/helpers/helpers.rb"
     - "bin/bundle"
     - "config/initializers/simple_form.rb"
+Style/GlobalVars:
+  Enabled: false
 Style/ConditionalAssignment:
   Enabled: false
 Style/StringLiterals:
