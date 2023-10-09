@@ -3,29 +3,43 @@
     <h2>Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-      <%= f.error_notification %>
+      <% if f.object.errors.any? %>
+    <div class="error-text text-danger">
+      <% if f.object.errors[:password].any? %>
+        Password must have 6 characters or more.<br>
+      <% end %>
+      <% if f.object.errors[:first_name].any? || f.object.errors[:last_name].any? || f.object.errors[:email].any? || f.object.errors[:address].any? %>
+        All fields must be complete.
+      <% end %>
+    </div>
+  <% end %>
       <div class="Signup-sub-container">
         <div class="form-signup column">
           <div class="input-field">
-            <%= f.input :first_name, required: true, autofocus: true %>
+            <%= f.input :first_name, required: true, autofocus: true, input_html: { class: f.object.errors[:first_name].any? ? 'is-invalid' : '' } %>
+          </div>      
+
+          <div class="input-field">
+            <%= f.input :last_name, required: true, input_html: { class: f.object.errors[:last_name].any? ? 'is-invalid' : '' } %>
           </div>
 
           <div class="input-field">
-            <%= f.input :last_name, required: true %>
-          </div>
-
-          <div class="input-field">
-            <%= f.input :email, required: true, input_html: { autocomplete: "email" } %>
+            <%= f.input :email, required: true, input_html: { autocomplete: "email", class: f.object.errors[:email].any? ? 'is-invalid' : '' } %>
           </div>
         </div>
 
         <div class="form-signup column">
           <div class="input-field">
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
+            <%= f.input :address, required: true, input_html: { class: f.object.errors[:address].any? ? 'is-invalid' : '' } %>
+          </div>
+      
+          <div class="input-field">
+            <%= f.input :password, required: true, input_html: { autocomplete: "new-password", class: f.object.errors[:password].any? ? 'is-invalid' : '' }, error: false %>
           </div>
 
+
           <div class="input-field">
-            <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", class: f.object.errors[:password_confirmation].any? ? 'is-invalid' : '' } %>
           </div>
         </div>
       </div>
@@ -39,3 +53,4 @@
     <% end %>
   </div>
 </section>
+
