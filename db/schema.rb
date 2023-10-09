@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_07_220343) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "purchased"
+    t.boolean "purchased", default: false
     t.index ["category_id"], name: "index_bikes_on_category_id"
   end
 
@@ -62,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_07_220343) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "ordered"
+    t.boolean "ordered", default: false
     t.index ["bike_id"], name: "index_carts_on_bike_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end

@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @carts = current_user.carts
+    @carts = current_user.carts.where(ordered: false)
   end
 
   def create
