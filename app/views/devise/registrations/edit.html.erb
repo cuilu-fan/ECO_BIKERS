@@ -7,13 +7,13 @@
       <div class="form-columns">
         <div class="form-column1">
           <div class="Avatar-change">
-            <%= image_tag "user1.png", class: "User-Pic", id: "user-pic" %>   
+            <%= image_tag "profile-icon.png", class: "User-Pic", id: "user-pic" %>
             <input type="file" class="upload-box" name="avatar">
             <div class="cancel-account-cont">
             <h3 class="sub-title">Cancel my account</h3>
              <%= button_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "button-delete" %>
           </div>
-          </div>  
+          </div>
         </div>
 
         <div class="form-row">
@@ -38,12 +38,12 @@
                         input_html: { autocomplete: "new-password" } %>
                 <%= f.input :current_password,
                         required: true,
-                        input_html: { autocomplete: "current-password" } %> 
+                        input_html: { autocomplete: "current-password" } %>
                 <div class="form-actions">
                   <%= f.button :submit, "Save", class: "Btn-User" %>
                   <%= link_to "Back", :back, class: "button-delete" %>
-                </div>        
-              </div>         
+                </div>
+              </div>
             </div>
           <div>
         </div>
