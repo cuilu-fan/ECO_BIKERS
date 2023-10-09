@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
     cart = Cart.find(params[:cart_id])
     cart.ordered = true
     cart.save
+    $cart_count = 0
     redirect_to orders_path
   end
 end
