@@ -57,7 +57,7 @@
   transform: translate(-50%, -50%);
   z-index: 0;
   box-shadow: 0px 0px 17px 1px rgba(0, 0, 0, 0.34);
-  animation: slideIn 3s forwards;
+  animation: slideIn 2s forwards;
 }
 
 .blob span {
@@ -155,5 +155,11 @@
   100% {
     opacity: 1; 
     transform: translateY(0); 
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .category-text-Bl {
+    top: 80%;
   }
 }
