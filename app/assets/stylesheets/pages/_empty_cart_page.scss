@@ -1,0 +1,21 @@
+.empty-cart{
+  width: 800px;
+  height: 600px ;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.notice-text{
+  text-align: center;
+  color:white;
+  font: bold;
+  font-size: x-large;
+}
+
+.redirect-btn{
+  margin-top: 30px;
+}

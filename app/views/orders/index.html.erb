@@ -1,12 +1,37 @@
-<% @orders.each do |order| %>
-<%= order.cart.bike.brand%>
-<%= order.cart.bike.price%>
-<%= order.cart.bike.color%>
-<%= order.cart.bike.size%>
-<%= order.cart.bike.age%>
-<%= order.cart.bike.refurbed_year%>
-<%= order.cart.bike.condition%>
-<%= order.cart.bike.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<% @orders.each_with_index do |order, index| %>
+  <div class="container bike-order-item">
+
+      <div class="container outter-box">
+        <div id="carouselExampleCaptions-<%=index%>" class="carousel slide bike-item">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions-<%=index%>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions-<%=index%>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner">
+
+            <% order.cart.bike.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
+                <%= cl_image_tag photo.key, height: 150, width: 250, crop: :fill, class:"pic-border" %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions-<%=index%>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions-<%=index%>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="container bk-o-ls">
+        <h5 class="order-detail-list">Brand: <%= order.cart.bike.brand %></h5>
+        <h5 class="order-detail-list">Size: <%= order.cart.bike.size %></h5>
+        <h5 class="order-detail-list">Refurbed year: <%= order.cart.bike.refurbed_year%></h5>
+        <h5 class="order-detail-list">Condition: <%= order.cart.bike.condition%></h5>
+        <h5 class="order-detail-list">Price: <%= number_to_currency(order.cart.bike.price, precision: 2, unit: "€", separator: ".", delimiter: " ")  %></h5>
+      </div>
+  </div>
 <% end %>
