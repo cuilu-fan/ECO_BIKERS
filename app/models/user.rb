@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :carts
   has_many :orders
+  has_one_attached :avatar
 end
