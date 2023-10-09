@@ -1,48 +1,73 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<section class="Section-UserPrf">
+  <div class="User-Form-Container">
+    <h2 class="Title-profile">Hi <%= current_user.first_name %>!!</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
+      <div class="form-columns">
+        <div class="form-column1">
+          <div class="Avatar-change">
+            <%= image_tag "user1.png", class: "User-Pic", id: "user-pic" %>   
+            <input type="file" class="upload-box" name="avatar">
+            <div class="cancel-account-cont">
+            <h3 class="sub-title">Cancel my account</h3>
+             <%= button_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "button-delete" %>
+          </div>
+          </div>  
+        </div>
 
+        <div class="form-row">
+          <div class="form-inputs">
+            <div class="Edit-user-container">
+              <div class="form-change column-change">
+                <%= f.input :first_name, required: true, autofocus: true %>
+                <%= f.input :last_name, required: true, autofocus: true %>
+                <%= f.input :address, required: true, autofocus: true %>
+                <%= f.input :phone_number, required: true, autofocus: true %>
+              </div>
+              <div class="form-change column-change">
+                <%= f.input :email, required: true, autofocus: true %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+                <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                        required: false,
+                        input_html: { autocomplete: "new-password" } %>
+                <%= f.input :current_password,
+                        required: true,
+                        input_html: { autocomplete: "current-password" } %> 
+                <div class="form-actions">
+                  <%= f.button :submit, "Save", class: "Btn-User" %>
+                  <%= link_to "Back", :back, class: "button-delete" %>
+                </div>        
+              </div>         
+            </div>
+          <div>
+        </div>
+      </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-
-    <%= f.input :avatar, as: :file %>
-
-    <%= f.input :first_name, required: true, autofocus: true %>
-
-    <%= f.input :last_name, required: true, autofocus: true %>
-
-    <%= f.input :address, required: true, autofocus: true %>
-
-    <%= f.input :phone_number, required: true, autofocus: true %>
-
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
   </div>
+</section>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Save" %>
-  </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const profilePictureInput = document.querySelector(".form-column1 input[type='file']");
+    const userPic = document.getElementById("user-pic");
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+    profilePictureInput.addEventListener("change", function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          userPic.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+</script>
