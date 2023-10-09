@@ -15,24 +15,25 @@
           <%= link_to carts_path do %>
             <div id="shopping-cart" >
               <div class="icon-badge-container">
-                <span id="badge" class="p1 fa-stack fa-2x has-badge">
+                <span class="p1 fa-stack fa-2x has-badge" data-count="4" id="badge">
                   <i class="fa-solid fa-cart-shopping icon-badge-icon"></i>
                 </span>
+                <%# <div class="icon-badge" display="false"></div> %>
               </div>
               <li class="nav-item dropdown">
             </div>
           <% end %>
         <%# HERE IS THE SHOPPING CART ICON %>
-        <div class="avatar-img">
+        <div>
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "user1.png", class: "avatar", alt: "dropdown menu" %>
           </a>
+      </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
-        </div>
           </li>
         <% end %>
       </ul>

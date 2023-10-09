@@ -1,4 +1,6 @@
-<% if @carts != 0  %>
+<% if @carts == 0  %>
+    <%= render "shared/empty_page" %>
+<% end %>
   <% @carts.each_with_index do |cart, index| %>
     <div class="container bike-cart-item">
 
@@ -50,8 +52,6 @@
             </div>
           <% end %>
         </div>
+
     </div>
   <% end %>
-<% else  %>
-    <%= render "shared/empty_page" %>
-<% end %>
