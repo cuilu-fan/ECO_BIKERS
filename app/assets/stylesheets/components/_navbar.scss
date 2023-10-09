@@ -15,6 +15,30 @@
   border-radius: 50px;
 }
 
+.container-fluid{
+  width:95%;
+}
+
 #shopping-cart{
+  margin-top: 20px;
   margin-right: 20px;
+  position: relative;
+}
+
+
+.icon-badge-icon {
+  font-size: 20px;
+  position: relative;
+}
+
+.icon-badge {
+  background-color: red;
+  font-size: small;
+  color: white;
+  text-align: center;
+  width: 20px;
+  border-radius: 50%;
+  position: relative;
+  top: -35px;
+  left: 17px;
 }
