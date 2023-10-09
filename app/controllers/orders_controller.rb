@@ -9,6 +9,9 @@ class OrdersController < ApplicationController
     bike = Bike.find(params[:bike_id])
     bike.purchased = true
     bike.save
+    cart = Cart.find(params[:cart_id])
+    cart.ordered = true
+    cart.save
     redirect_to orders_path
   end
 end

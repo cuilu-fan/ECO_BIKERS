@@ -4,7 +4,7 @@
     <% @categories.each do |category| %>
     <%= link_to bikes_path do %>
       <div class="blob">
-        <%= category.name %>
+        <span><%= category.name %></span><em></em>
       </div>
       <% end %>
     <% end %>
