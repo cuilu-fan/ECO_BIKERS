@@ -41,7 +41,7 @@
                         input_html: { autocomplete: "current-password" } %>
                 <div class="form-actions">
                   <%= f.button :submit, "Save", class: "Btn-User" %>
-                  <%= link_to "Back", :back, class: "button-delete" %>
+                  <button class="Btn-back" onclick="window.history.back()">Back</button>
                 </div>
               </div>
             </div>
