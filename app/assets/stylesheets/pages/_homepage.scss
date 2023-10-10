@@ -19,16 +19,6 @@
     color: white;
     animation: fade-in 1s ease-in-out;
   }
-
-  .category-text-Bl {
-    position: relative;
-    top: 62%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    animation: slideInFromBottom 4.5s forwards;
-  }
 }
 
 
@@ -79,7 +69,7 @@
   background: #fff;
   width: 47%;
   right: 23px;
-  top: 50%;
+  top: 45%;
   transform: scaleX(0.25);
   transform-origin: center right;
   transition: all 0.3s ease;
@@ -125,6 +115,16 @@
 
 .Spantext {
   color: rgb(231, 165, 0);
+}
+
+.category-text-Bl {
+  position: relative;
+  top: 65%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  animation: slideInFromBottom 4.5s forwards;
 }
 
 @keyframes slideIn {
