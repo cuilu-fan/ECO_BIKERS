@@ -28,6 +28,7 @@
     justify-content: space-between;
 }
 
+
 /* INSIDE THE CONTAINER */
 
 .Title-profile {
@@ -59,7 +60,6 @@
 .Edit-user-container {
     display: flex;
     flex-direction: row;
-    margin-left: -12%;
 }
 
 .column-change {
@@ -121,6 +121,7 @@
 /* UPLOAD IMAGE */
 
 .form-column1 {
+  margin-right: 50px;
     .User-Pic {
         max-width: 100%;
         max-height: 100%;
