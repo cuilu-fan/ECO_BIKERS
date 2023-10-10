@@ -1,6 +1,11 @@
-<% @orders.each_with_index do |order, index| %>
-  <div class="container bike-order-item">
-
+<div class="d-flex align-items-center flex-column">
+  <% if notice %>
+    <div class="alert--banner">
+      <h2><%= notice %></h2>
+    </div>
+  <% end %>
+  <% @orders.each_with_index do |order, index| %>
+    <div class="container bike-order-item">
       <div class="container outter-box">
         <div id="carouselExampleCaptions-<%=index%>" class="carousel slide bike-item">
           <div class="carousel-indicators">
@@ -8,7 +13,6 @@
             <button type="button" data-bs-target="#carouselExampleCaptions-<%=index%>" data-bs-slide-to="1" aria-label="Slide 2"></button>
           </div>
           <div class="carousel-inner">
-
             <% order.cart.bike.photos.each_with_index do |photo, index| %>
               <div class="carousel-item <%= index == 0 ? 'active' : '' %>">
                 <%= cl_image_tag photo.key, height: 150, width: 250, crop: :fill, class:"pic-border" %>
@@ -25,7 +29,6 @@
           </button>
         </div>
       </div>
-
       <div class="container bk-o-ls">
         <h5 class="order-detail-list">Brand: <%= order.cart.bike.brand %></h5>
         <h5 class="order-detail-list">Size: <%= order.cart.bike.size %></h5>
@@ -33,5 +36,6 @@
         <h5 class="order-detail-list">Condition: <%= order.cart.bike.condition%></h5>
         <h5 class="order-detail-list">Price: <%= number_to_currency(order.cart.bike.price, precision: 2, unit: "€", separator: ".", delimiter: " ")  %></h5>
       </div>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>
