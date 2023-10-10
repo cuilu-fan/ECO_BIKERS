@@ -1,0 +1,23 @@
+.alert--banner {
+  border: 2px solid $brand-green;
+  width: 650px;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: $brand-green;
+  color: rgb(235, 235, 235);
+  border-radius: 8px;
+  animation: fadeOut 5s;
+  opacity: 0;
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
